@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx-namespace  # Replace with your desired namespace name
+  name: gitlab  # Replace with your desired namespace name
 
 ---
 
