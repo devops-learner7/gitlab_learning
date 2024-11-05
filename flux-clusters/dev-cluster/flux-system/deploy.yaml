@@ -1,29 +1,20 @@
-# Namespace definition
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: gitlab  # Replace with your desired namespace name
-
----
-
-# NGINX Deployment definition
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment  # Deployment name
-  namespace: gitlab  # Namespace where the deployment will be created
+  name: nginx-deployment 
+  namespace: gitlab  
 spec:
-  replicas: 2  # Number of NGINX pod replicas
+  replicas: 2  
   selector:
     matchLabels:
-      app: nginx-app  # App label
+      app: nginx-app  
   template:
     metadata:
       labels:
-        app: nginx-app  # Label matching the selector
+        app: nginx-app  
     spec:
       containers:
-      - name: nginx-container  # Container name
-        image: nginx:latest  # NGINX container image
+      - name: nginx-container  
+        image: nginx:latest  
         ports:
-        - containerPort: 80  # Exposing port 80 for HTTP traffic
+        - containerPort: 80  
